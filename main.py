@@ -1,5 +1,5 @@
 # main.py
-from animals import Animal, Cat, Dog, Zoo, ZooKeeper
+from animals import Cat, Dog, Zoo, ZooKeeper
 
 if __name__ == "__main__":
     # create animal objects

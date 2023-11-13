@@ -28,25 +28,21 @@ class Zoo:
     def __init__(self):
         self.animals = []
 
-#a attribute list of animal objects
-    def add_animal(self, animal):
-        self.animals.append(animal)
-
-#b calls speak method for each animal in the current instance
-    def speak_all(self):
-        for animal in self.animals:
-            animal.speak()
-
 #3 implement class Zookeeper
 class ZooKeeper:
     # attribute: single Zoo instance
-    def __init__ (self, name):
+    def __init__ (self, name, zoo):
         self.name = name
-        self.zoo = Zoo()
+        self.zoo = zoo
 
     # method: add_animal(animal : Animal)
     def add_animal(self, animal):
-        self.zoo.add_animal(animal)
+        self.zoo.animals.append(animal)
         print (f"{self.name} adds {animal.name} to the zoo.")
-         
+
+
+    # method for Zookeeper to make animals speak     
+    def make_animals_speak(self):
+        for animal in self.zoo.animals:
+            animal.speak()
 
